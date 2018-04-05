@@ -34,14 +34,26 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-PLUGIN_PATHS = ['pelican-plugins']
 
 THEME = 'pelican-themes/pelican-bootstrap3'
 BOOTSTRAP_THEME = 'flatly'
 
 PLUGIN_PATHS = ['/home/mirko/my_staticsite/My_staticsite/pelican-plugins']
+MARKUP = ('md', 'ipynb')
+
+
+
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 PLUGINS = [
-    'i18n_subsites']
+    'i18n_subsites',
+		'series',
+    'tag_cloud',
+    'liquid_tags.youtube',
+    'liquid_tags.notebook',
+    'liquid_tags.include_code',
+    'render_math',
+    'pelican-ipynb.markup']
 
 I18N_TEMPLATES_LANG = 'en'
+
+IGNORE_FILES = ['.ipynb_checkpoints']
